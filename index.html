@@ -503,7 +503,7 @@
       </p>
       <div class="hero-ctas">
       <a href="javascript:void(0)" onclick="navTo('projects')" class="btn-primary">View Projects</a>
-        <a href="/cdn-cgi/l/email-protection#4131332025242431323423233433202b787701262c20282d6f222e2c" class="btn-outline">Get in Touch</a>
+        <a href="javascript:void(0)" onclick="openEmail()" class="btn-outline">Get in Touch</a>
       </div>
       <div class="hero-stats">
         <div>
@@ -582,7 +582,7 @@
             <div class="detail-icon">✉️</div>
             <div class="detail-info">
               <strong>Email</strong>
-              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2050524144454550535542425552414a191660474d41494c0e434f4d">[email&#160;protected]</a></span>
+              <span id="about-email"></span>
             </div>
           </div>
         </div>
@@ -923,9 +923,9 @@
         <h3>Open to opportunities</h3>
         <p>Whether it's a full-time role, consulting project, or just a chat about tech — I'd love to hear from you.</p>
         <div class="contact-links">
-          <a href="/cdn-cgi/l/email-protection#2f5f5d4e4b4a4a5f5c5a4d4d5a5d4e4516196f48424e4643014c4042" class="contact-link">
+          <a href="javascript:void(0)" onclick="openEmail()" class="contact-link">
             <span class="contact-link-icon">✉️</span>
-            <span class="__cf_email__" data-cfemail="433331222726263330362121363122297a7503242e222a2f6d202c2e">[email&#160;protected]</span>
+            <span id="contact-email"></span>
           </a>
           <a href="tel:+918870220406" class="contact-link">
             <span class="contact-link-icon">📞</span>
@@ -946,6 +946,19 @@
   </footer>
 
     <script>
+
+    // Email protection - built at runtime to avoid bot scraping
+    function openEmail() {
+      var e = 'pradeepsubburaj96' + '@' + 'gmail.com';
+      window.location.href = 'mailto:' + e;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var e = 'pradeepsubburaj96' + '@' + 'gmail.com';
+      var ae = document.getElementById('about-email');
+      var ce = document.getElementById('contact-email');
+      if (ae) ae.textContent = e;
+      if (ce) ce.textContent = e;
+    });
     function navTo(id) {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
