@@ -941,9 +941,13 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>Built with ❤️ by Pradeep Subburaj · 2025</p>
-  </footer>
+ <footer>
+  <p>Built with ❤️ by Pradeep Subburaj · <span id="year"></span></p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
     <script>
 
